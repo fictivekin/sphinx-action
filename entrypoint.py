@@ -15,8 +15,8 @@ if __name__ == "__main__":
         os.system(pre_command)
 
     github_env = action.GithubEnvironment(
-        build_command=os.environ.get("INPUT_BUILD-COMMAND"),
+        build_command=os.environ.get("BUILD-CMD", "make html"),
     )
 
     # We build the doc folder passed in the inputs.
-    action.build_all_docs(github_env, [os.environ.get("INPUT_DOCS-FOLDER")])
+    action.build_all_docs(github_env, [os.environ.get("DOCS-FOLDER", "sphinx_source/")])
