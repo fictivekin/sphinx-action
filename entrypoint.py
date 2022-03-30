@@ -9,8 +9,8 @@ from sphinx_action import action
 if __name__ == "__main__":
     print("[sphinx-action] Starting sphinx-action build.")
 
-    if "INPUT_PRE-BUILD-COMMAND" in os.environ:
-        pre_command = os.environ["INPUT_PRE-BUILD-COMMAND"]
+    if "PRE-BUILD" in os.environ:
+        pre_command = os.environ["PRE-BUILD"]
         print("Running: {}".format(pre_command))
         os.system(pre_command)
 
