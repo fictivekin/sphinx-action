@@ -97,7 +97,7 @@ maximum 1 argument(s) allowed, 2 supplied.
 
 def build_docs(build_command, docs_directory):
     if not build_command:
-        raise ValueError("Build command may not be empty")
+        build_command = "make html"
 
     docs_requirements = os.path.join(docs_directory, "requirements.txt")
     if os.path.exists(docs_requirements):
