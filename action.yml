@@ -8,7 +8,7 @@ inputs:
   docs-folder:
     description:
       The folder containing your sphinx docs.
-    required: true
+    required: false
     default: "docs/"
   build-command:
     description:
