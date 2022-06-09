@@ -10,13 +10,13 @@ if __name__ == "__main__":
     print("[sphinx-action] Starting sphinx-action build.")
 
     if "PRE-BUILD" in os.environ:
-        pre_command = os.environ["PRE-BUILD"]
+        pre_command = os.environ["PRE_BUILD"]
         print("Running: {}".format(pre_command))
         os.system(pre_command)
 
     github_env = action.GithubEnvironment(
-        build_command=os.environ.get("BUILD-CMD", "make html"),
+        build_command=os.environ.get("BUILD_CMD", "make html"),
     )
 
     # We build the doc folder passed in the inputs.
-    action.build_all_docs(github_env, [os.environ.get("DOCS-FOLDER", "sphinx_source/")])
+    action.build_all_docs(github_env, [os.environ.get("DOCS_FOLDER", "sphinx_source/")])
